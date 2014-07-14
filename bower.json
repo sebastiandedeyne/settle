@@ -1,0 +1,23 @@
+{
+  "name": "Settle",
+  "version": "0.1",
+  "homepage": "https://github.com/sebdd/settle",
+  "authors": [
+    "Sebastian De Deyne <sebastiandedeyne@gmail.com>"
+  ],
+  "keywords": [
+    "emberjs"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.20"
+  }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="Settle" xmlns:ng="http://angularjs.org">
+<head>
+  <title>Settle</title>
+
+  <script type="text/javascript" src="//use.typekit.net/ptz6fgg.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  
+  <link rel="stylesheet" href="layout/stylesheets/screen.css">
+  
+  <script src="vendor/angular/angular.js"></script>
+  <script src="vendor/lodash/dist/lodash.js"></script>
+  <script src="js/app.js"></script>
+</head>
+<body>
+  <div ng-controller="IndexController">
+    <table class="input-table">
+      <thead>
+        <tr>
+          <th colspan="2" class="logotype">Settle</th>
+          <th ng-repeat="person in persons"><input type="text" ng-model="person.name" placeholder="Person..."></th>
+          <th class="cell-add" ng-click="addPerson()">+</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in items">
+          <td class="item-name"><input type="text" ng-model="item.name" placeholder="Item..."></td>
+          <td class="item-price"><input type="number" ng-model="item.price" min="0"></td>
+          <td ng-repeat="person in persons" ng-class="{ 'is-checked': personHasItem(person.id, item.id) }" class="item-checker" ng-click="toggleItem(person.id, item.id)"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cell-add" ng-click="addItem()">+</td>
+          <td ng-repeat="person in persons"></td>
+          <td></td>
+        </tr>
+        <tr class="row-total">
+          <td colspan="2">Total</td>
+          <td ng-repeat="person in persons">{{ getPersonsTotal(person.id, true) }}</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

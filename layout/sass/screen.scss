@@ -1,0 +1,87 @@
+@import "compass/css3";
+@import "compass/reset";
+
+$black: #000;
+$white: #fff;
+$blue: #29355b;
+$blue-lighter: #333f63;
+$blue-lightest: #3d486a;
+
+* {
+  -webkit-font-smoothing: antialiased;  
+  -moz-osx-font-smoothing: grayscale;
+  @include box-sizing(border-box);
+}
+
+html {
+  font-size: 17px;
+}
+
+body {
+  font-family: 'proxima-nova', sans-serif;
+  color: $white;
+  background-color: $blue;
+  line-height: 1.3rem;
+}
+
+.input-table {
+  // margin: 3rem auto 1rem;
+  border-collapse: true;
+  td,
+  th {
+    width: 7rem;
+    padding: 1rem;
+    background-color: $blue-lighter;
+    border: 1px solid $blue;
+    text-align: center;
+  }
+  .logotype {
+    background-color: transparent;
+    text-align: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+  }
+  .item-label {
+    text-align: left;
+  }
+  .item-price {
+    width: 6rem;
+    font-weight: bold;
+  }
+  .item-checker {
+    background-color: $blue-lightest;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+    background-image: inline-image('cross.svg');
+    &.is-checked {
+      background-image: inline-image('check.svg');
+    }
+    &:hover {
+      background-color: $blue-lighter;
+    }
+  }
+  .row-total td {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .cell-add {
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+    &:hover {
+      background-color: $blue-lightest;
+    }
+  }
+  input {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    font: inherit;
+    color: #fff;
+    width: 100%;
+    border-bottom: 1px solid $blue-lightest;
+  }
+}
